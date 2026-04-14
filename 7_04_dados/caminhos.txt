@@ -1,0 +1,19 @@
+A. All-c-uses/Some-p-uses para line
+
+0, 1, 4
+
+B. All-p-uses para line
+
+0, 1, 3
+0, 1, 4
+0, 2
+
+C. All-c-uses/Some-p-uses para column
+
+0, 1, 4
+
+D. All-p-uses para column
+
+0, 1, 3
+0, 1, 4
+0, 2

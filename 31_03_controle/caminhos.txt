@@ -1,0 +1,11 @@
+
+Cobertura de Comandos:
+
+0, 1, 2, 3, 4
+0, 1, 2, 5
+
+Cobertura de Ramos:
+
+0, 1, 2, 3, 4
+0, 1, 2, 5
+0, 1, 2, 3, 5
