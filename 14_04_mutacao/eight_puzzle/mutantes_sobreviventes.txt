@@ -1,0 +1,106 @@
+# Mutante 1 (conteudo.puzzle_game.xǁPuzzleGameǁget_tile__mutmut_4)
+
+Mudança: Trocou o > por >= na verificação da linha, permitindo a linha 0.
+Teste: test__line_0
+
+```
+Survived (exit_code=0): No test detected this mutant. (press t to view tests executed for this mutant)       
+
+--- conteudo/puzzle_game.py                                                                                                               
++++ conteudo/puzzle_game.py                                                                                                               
+@@ -1,5 +1,5 @@                                                                                                                           
+ def get_tile(self, line, column):                                                                                                        
+-    if line > 0 and line <= self.board.number_of_lines and \                                                                             
++    if line >= 0 and line <= self.board.number_of_lines and \                                                                            
+                 column > 0 and column <= self.board.number_of_columns:                                                                   
+         if line == self.line_of_empty_position and \                                                                                     
+                 column == self.column_of_empty_position:
+```
+
+# Mutante 2 (conteudo.puzzle_game.xǁPuzzleGameǁget_tile__mutmut_7)
+
+Mudança: Trocou o > por >= na verificação da coluna, permitindo a coluna 0.
+Teste: test__column_0
+
+```
+Survived (exit_code=0): No test detected this mutant. (press t to view tests executed for this mutant)                                   
+                                                                                                                                          
+--- conteudo/puzzle_game.py                                                                                                               
++++ conteudo/puzzle_game.py                                                                                                               
+@@ -1,6 +1,6 @@                                                                                                                           
+ def get_tile(self, line, column):                                                                                                        
+     if line > 0 and line <= self.board.number_of_lines and \                                                                             
+-                column > 0 and column <= self.board.number_of_columns:                                                                   
++                column >= 0 and column <= self.board.number_of_columns:                                                                  
+         if line == self.line_of_empty_position and \                                                                                     
+                 column == self.column_of_empty_position:                                                                                 
+             return (" ")
+```
+
+# Mutante 3 (conteudo.puzzle_game.xǁPuzzleGameǁmove_tile__mutmut_34)
+
+Mudança: Faz ramo de sucesso retornar falso
+Teste: test_ramo_0_1_2_3_4
+
+Survived (exit_code=0): No test detected this mutant. (press t to view tests executed for this mutant)                                           
+                                                                                                                                                  
+--- conteudo/puzzle_game.py                                                                                                                       
++++ conteudo/puzzle_game.py                                                                                                                       
+@@ -7,6 +7,6 @@                                                                                                                                   
+         self.line_of_empty_position = tile_line                                                                                                  
+         self.column_of_empty_position = tile_column                                                                                              
+         self.board.put_tile(None, self.line_of_empty_position, self.column_of_empty_position)                                                    
+-        return True                                                                                                                              
++        return False                                                                                                                             
+     else:                                                                                                                                        
+         return False
+
+# Mutante 4 (conteudo.puzzle_game.xǁPuzzleGameǁmove_tile__mutmut_3)
+
+Mudança: Muda tile_line para receber o valor da coluna, impossibilitando a condição necessária pelo ramo de sucesso
+Teste: test_ramo_0_1_2_5
+
+Survived (exit_code=0): No test detected this mutant. (press t to view tests executed for this mutant)                                           
+                                                                                                                                                  
+--- conteudo/puzzle_game.py                                                                                                                       
++++ conteudo/puzzle_game.py                                                                                                                       
+@@ -1,5 +1,5 @@                                                                                                                                   
+ def move_tile(self, tile):                                                                                                                       
+-    tile_line = self.dic_positions_of_tiles.get(tile)[0]                                                                                         
++    tile_line = self.dic_positions_of_tiles.get(tile)[1]                                                                                         
+     tile_column = self.dic_positions_of_tiles.get(tile)[1]                                                                                       
+     if self.board.is_inside_the_board(tile_line, tile_column) and self.board.positions_are_adjacent(tile_line, tile_column, self.line_of_empty_  
+         self.board.put_tile(tile, self.line_of_empty_position, self.column_of_empty_position)
+
+
+# Mutante 5 (conteudo.puzzle_game.xǁPuzzleGameǁmove_tile__mutmut_35)
+
+Mudança: Faz ramo de sucesso retornar Falso
+Teste: test_ramo_0_1_2_5
+
+Survived (exit_code=0): No test detected this mutant. (press t to view tests executed for this mutant)                                           
+                                                                                                                                                  
+--- conteudo/puzzle_game.py                                                                                                                       
++++ conteudo/puzzle_game.py                                                                                                                       
+@@ -9,4 +9,4 @@                                                                                                                                   
+         self.board.put_tile(None, self.line_of_empty_position, self.column_of_empty_position)                                                    
+         return True                                                                                                                              
+     else:                                                                                                                                        
+-        return False                                                                                                                             
++        return True
+
+# Mutante 6 (conteudo.puzzle_game.xǁPuzzleGameǁmove_tile_from_a_position_to_the_empty_position__mutmut_34)
+
+Mudança: Faz ramo de falha retornar true.
+Teste: test_move_tile_from_a_position_to_the_empty_position_returns_false
+
+Survived (exit_code=0): No test detected this mutant. (press t to view tests executed for this mutant)                                           
+                                                                                                                                                  
+--- conteudo/puzzle_game.py                                                                                                                       
++++ conteudo/puzzle_game.py                                                                                                                       
+@@ -8,4 +8,4 @@                                                                                                                                   
+         self.board.put_tile(None, self.line_of_empty_position, self.column_of_empty_position)                                                    
+         return True                                                                                                                              
+     else:                                                                                                                                        
+-        return False                                                                                                                             
++        return True
