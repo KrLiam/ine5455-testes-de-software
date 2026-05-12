@@ -75,7 +75,7 @@ Survived (exit_code=0): No test detected this mutant. (press t to view tests exe
 
 # Mutante 5 (conteudo.puzzle_game.xǁPuzzleGameǁmove_tile__mutmut_35)
 
-Mudança: Faz ramo de sucesso retornar Falso
+Mudança: Faz ramo de falha retornar True
 Teste: test_ramo_0_1_2_5
 
 Survived (exit_code=0): No test detected this mutant. (press t to view tests executed for this mutant)                                           
