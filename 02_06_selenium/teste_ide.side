@@ -1,0 +1,62 @@
+{
+  "id": "f8b5d57c-b8f7-489d-b61d-f4cfd43fb338",
+  "version": "2.0",
+  "name": "testes",
+  "url": "https://www.google.com",
+  "tests": [{
+    "id": "b7be3c35-a7ba-4c63-9df3-81ed66fe265c",
+    "name": "william",
+    "commands": [{
+      "id": "cd3e2f1e-8087-4942-95e2-9d204cb35915",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "672f76c1-dd3d-4aba-b34d-f2e92a4fe61c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1084x781",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "245d9b0e-3111-4e70-9598-b3d1f8f76255",
+      "comment": "",
+      "command": "click",
+      "target": "id=APjFqb",
+      "targets": [
+        ["id=APjFqb", "id"],
+        ["name=q", "name"],
+        ["css=#APjFqb", "css:finder"],
+        ["xpath=//textarea[@id='APjFqb']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dc86d7d6-3ab0-4c7c-b4e5-f86d7a285d28",
+      "comment": "",
+      "command": "executeScript",
+      "target": "document.getElementById('APjFqb').value = 'William Kraus'",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "44d1843b-2041-465a-ba98-7ba23966dd93",
+      "comment": "",
+      "command": "click",
+      "target": "css=.gNO89b",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "cef54102-8947-40e8-a4ff-2508df5a3fb6",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://www.google.com/"],
+  "plugins": []
+}

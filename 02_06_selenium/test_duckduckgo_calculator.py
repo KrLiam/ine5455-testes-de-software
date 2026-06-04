@@ -12,7 +12,6 @@ class TestDuckDuckGoCalculator(unittest.TestCase):
     def setUpClass(cls):
         # Setup
         options = Options()
-        # options.add_argument("--window-size=1920,1080")
         cls.driver = webdriver.Chrome(options=options)
         cls.wait = WebDriverWait(cls.driver, 10)
         cls._open_calculator()
@@ -60,8 +59,7 @@ class TestDuckDuckGoCalculator(unittest.TestCase):
         # Exercise SUT
         self._click_button("5")
         self._click_button("×")
-        self._click_button("4")
-        self._click_button("=")
+        self._click_button("6")
         self._click_button("÷")
         self._click_button("1")
         self._click_button("0")
@@ -69,7 +67,7 @@ class TestDuckDuckGoCalculator(unittest.TestCase):
         resultado = self._get_display_value()
 
         # Verificação
-        self.assertTrue(resultado == "2")
+        self.assertTrue(resultado == "3")
 
     def test_c_duas_operacoes_com_subtracao(self):
         self._refresh_page()
@@ -77,13 +75,13 @@ class TestDuckDuckGoCalculator(unittest.TestCase):
         self._click_button("8")
         self._click_button("-")
         self._click_button("3")
-        self._click_button("+")
-        self._click_button("4")
+        self._click_button("×")
+        self._click_button("2")
         self._click_button("=")
         resultado = self._get_display_value()
 
         # Verificação
-        self.assertTrue(resultado == "9")
+        self.assertTrue(resultado == "2")
 
     def test_d_tres_operacoes_e_historico(self):
         self._refresh_page()
